@@ -26,7 +26,6 @@ public class InzeratFormController extends AbstractController{
 
     @RequestMapping(method = RequestMethod.GET)
     protected String form(@RequestParam(value = "id", required = false) Integer id, Model m) {
-        //Priprava dat pro form, pokud je zadano id polozky, pak bude predvyplnena
         if (id != null) {
             if (ulozisteInzeratu.getById(id).getHesloZadano()) {
                 m.addAttribute("inzerat", ulozisteInzeratu.getById(id));
@@ -34,7 +33,6 @@ public class InzeratFormController extends AbstractController{
                 return "redirect:/inzeraty";
             }
         } else {
-            // pokud vytvarime novou polozku, tak do JSP predame novou instanci
             m.addAttribute("inzerat", new Inzerat());
         }
         return "inzeratForm";

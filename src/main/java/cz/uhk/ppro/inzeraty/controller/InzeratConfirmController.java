@@ -35,7 +35,6 @@ public class InzeratConfirmController extends AbstractController{
 
     @RequestMapping(method = RequestMethod.GET)
     protected String form(@RequestParam(value = "id", required = false) Integer id, Model m) {
-        //Priprava dat pro form, pokud je zadano id polozky, pak bude predvyplnena
         if (id != null) {
             m.addAttribute("inzerat", ulozisteInzeratu.getById(id));
             return "confirmForm";

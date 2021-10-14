@@ -21,6 +21,7 @@ public class InzeratController extends AbstractController{
             model.addObject("inzerat", ulozisteInzeratu.getInzeraty());
         }
 
+        // kontrola aby nemohl být změněn inzerát přes url
         for (Inzerat inzerat : ulozisteInzeratu.getInzeraty()) {
             inzerat.setHesloZadano(false);
             System.out.println(inzerat.getHesloProUpravu());
