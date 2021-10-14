@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class AbstractController {
+public abstract class AbstractController {
     PametoveUlozisteInzeratu ulozisteInzeratu = null;
 
     public PametoveUlozisteInzeratu getUlozisteInzeratu() {
