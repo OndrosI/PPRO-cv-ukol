@@ -16,13 +16,16 @@
         <th>Text</th>
         <th>Cena</th>
         <th>Kategorie</th>
+        <th>Akce</th>
+        <th>Heslo</th>
     </tr>
-    <select name="kategorie" onchange="location.replace('inzeraty?kategorie='+this.value)">
+    <select name="kategorie" onchange="if (this.value) window.location.href='inzeraty?kategorie='+this.value">
         <option value=""></option>
         <option value="nakup">Nákup</option>
         <option value="prodej">Prodej</option>
         <option value="vymena">Výměna</option>
     </select>
+    <button onclick="window.location.href='inzeraty'">Zruš filter</button>
     <c:forEach var="i" items="${inzerat}">
         <tr>
             <td>${i.id }</td>
@@ -42,7 +45,7 @@
                     <input type="submit" value=" E ">
                 </form>
             </td>
-
+            <td>${i.hesloProUpravu}</td>
         </tr>
     </c:forEach>
 
